@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'BCSans';
+  src: url(../stories/assets/BCSans-Regular.woff);
+}
+
+@font-face {
+  font-family: 'BCSans';
+  src: url(../stories/assets/BCSans-Bold.woff);
+  font-weight: bold;
+}
+
+body {
+  font-family: 'BCSans', Arial, sans-serif;
+}
