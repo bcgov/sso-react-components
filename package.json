@@ -48,6 +48,7 @@
     "@types/lodash.flatten": "^4.4.6",
     "babel-loader": "^8.2.3",
     "babel-preset-react": "^6.24.1",
+    "prettier": "^2.5.0",
     "rollup": "^2.60.2",
     "rollup-plugin-dts": "^4.0.1",
     "storybook-addon-designs": "^6.2.0",
