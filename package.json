@@ -1,6 +1,6 @@
 {
   "name": "@bcgov-sso/react-npm",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "common react components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
