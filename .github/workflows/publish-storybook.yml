@@ -16,6 +16,7 @@ jobs:
           node-version: '14.x'
       - run: |
           npm i
+          npm i react react-dom
           npm run deploy-storybook -- --ci --source-branch dev
         env:
           GH_TOKEN: ${{ secrets.PAT }}
