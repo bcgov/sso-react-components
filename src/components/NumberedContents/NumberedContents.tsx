@@ -43,8 +43,8 @@ interface Props {
   showLine?: boolean;
   children: any;
   variant?: string;
-  circleDiameter: string;
-  circleMargin: string;
+  circleDiameter?: string;
+  circleMargin?: string;
 }
 
 export default function NumberedContents({
