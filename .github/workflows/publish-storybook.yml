@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - main
+      - dev
     types: [closed]
 jobs:
   build:
@@ -15,6 +16,6 @@ jobs:
           node-version: '14.x'
       - run: |
           npm i
-          npm run deploy-storybook -- --ci
+          npm run deploy-storybook -- --ci --source-branch dev
         env:
           GH_TOKEN: ${{ secrets.PAT }}
