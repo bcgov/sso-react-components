@@ -22,6 +22,12 @@ To add a component:
 2. Add a `<componentName>.tsx` file and `index.ts` file to the folder.
 3. Export your component from `index.ts`, e.g:
    `export { default } from './NumberedContents';`
+4. Add component export to `src/components/index.ts`, e.g:
+
+```js
+export { default as Accordion } from './Accordion';
+export { default as NumberedContents } from './NumberedContents';
+```
 
 ## Adding Stories
 
