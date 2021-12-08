@@ -16,9 +16,6 @@ export const styles = {
       border: 1px solid #434a44;
 
     `,
-    header: `
-      font-weight: 600;
-    `,
     close: `
       cursor: pointer !important;
       text-decoration: none;
@@ -40,44 +37,21 @@ export const styles = {
       `,
     },
   },
-  flex: {
-    container: `
-      display: flex;
-    `,
-    group: `
-      margin: auto 0.5rem;
-    `,
-  },
 };
 
 const config: StyleConfig = {
   defaultProps: {
-    variant: 'standard',
-    size: 'medium',
-    flex: false,
+    variant: 'success',
   },
   staticProps: [],
 };
 
-const childStyles = {
-  group: {
-    align: {
-      left: `
-      margin-right: auto;
-    `,
-      right: `
-      margin-left: auto;
-    `,
-    },
-  },
-};
-
-const DefaultAlert = applyTheme(styles, config, childStyles);
+const DefaultAlert = applyTheme(styles, config);
 
 type Variant = 'danger' | 'success';
 
 interface Props {
-  variant: Variant;
+  variant?: Variant;
   [key: string]: any;
 }
 
