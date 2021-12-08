@@ -11,7 +11,7 @@ const Template = (args) => <Button {...args}>{args.text}</Button>;
 export const Callout = Template.bind({});
 Callout.args = {
   variant: 'callout',
-  text: '+ Request Integration',
+  text: '+ Request SSO Integration',
 };
 
 export const Primary = Template.bind({});
