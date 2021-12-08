@@ -14,10 +14,36 @@ export default {
 const Template = (args) => (
   <>
     <NumberedContents {...args}>
-      <p>First line</p>
+      <span>
+        Are you accountable for this project: <strong>Yes</strong>
+      </span>
+      <br />
+      <span>
+        Client Type: <strong>Confidential</strong>
+      </span>
+      <br />
+      <span>
+        Project Name: <strong>zz</strong>
+      </span>
+      <br />
+      <span>
+        Default email address: <strong>lada.miaous@gov.bc.ca</strong>
+      </span>
+      <br />
+      <span>
+        Additional Emails: <strong></strong>
+      </span>
+      <br />
+      <span>
+        Identity Providers Required: <strong></strong>
+      </span>
+      <br />
+      <span>
+        Dev Redirect URIs: <strong>nnn</strong>
+      </span>
     </NumberedContents>
-    <NumberedContents {...args} number={2} title="Second Section">
-      <p>Second Line</p>
+    <NumberedContents {...args} number={2} title="Your environments(s) will be provisioned by the SSO Pathfinder team">
+      <p>Once you submit the request, access will be provided in 20 minutes or fewer</p>
     </NumberedContents>
   </>
 );
