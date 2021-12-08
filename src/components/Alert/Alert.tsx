@@ -52,6 +52,7 @@ type Variant = 'danger' | 'success';
 
 interface Props {
   variant?: Variant;
+  content?: string;
   [key: string]: any;
 }
 
@@ -98,6 +99,7 @@ const Alert = (props: Props) => (
     {props.variant === 'success' && SuccessIcon}
     {props.variant === 'danger' && DangerIcon}
     {props.children}
+    {props.content}
     <DefaultAlert.Close>X</DefaultAlert.Close>
   </DefaultAlert>
 );
