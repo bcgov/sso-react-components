@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import flatten from 'lodash.flatten';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import { LANDING_HEADER_FONT, SECONDARY_BLUE } from "../../styles/theme";
+import { LANDING_HEADER_FONT, SECONDARY_BLUE } from '../../styles/theme';
 
 const ACCORDION_HEADER_COLOR = '#eaeaea';
 const ACCORDION_BODY_COLOR = '#f5f5f5';
@@ -63,6 +63,7 @@ function Accordionpanel({ title, allOpen, setAllOpen, children }: any) {
 
 interface Props {
   children: any;
+  open?: boolean;
 }
 
 const ActionsContainer = styled.div`
@@ -79,9 +80,9 @@ const Divider = styled.span`
   margin: 0 9px;
 `;
 
-function Accordion({ children }: Props) {
-  const [allOpen, setAllOpen] = useState<boolean | null>(null);
-  console.log(LANDING_HEADER_FONT)
+function Accordion({ children, open = false }: Props) {
+  const [allOpen, setAllOpen] = useState<boolean>(open);
+  console.log(LANDING_HEADER_FONT);
 
   const handleClose = () => {
     setAllOpen(false);
@@ -99,9 +100,7 @@ function Accordion({ children }: Props) {
         <span onClick={handleClose}>Collapse All</span>
       </ActionsContainer>
       {Array.isArray(children)
-        ? flatten(children).map((child: any) =>
-            React.cloneElement(child, { allOpen, setAllOpen })
-          )
+        ? flatten(children).map((child: any) => React.cloneElement(child, { allOpen, setAllOpen }))
         : React.cloneElement(children, { allOpen, setAllOpen })}
     </>
   );

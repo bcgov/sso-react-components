@@ -62,7 +62,7 @@ Primary.story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/proto/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=795%3A2303&scaling=contain&page-id=505%3A1169&starting-point-node-id=802%3A2320&show-proto-sidebar=1',
+      url: 'https://www.figma.com/file/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=1635%3A2305',
     },
   },
 };
