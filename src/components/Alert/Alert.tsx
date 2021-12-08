@@ -1,6 +1,7 @@
 import { applyTheme, StyleConfig } from '@button-inc/component-library/Notification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import React from 'react';
 
 export const styles = {
   shared: {
