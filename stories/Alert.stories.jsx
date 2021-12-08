@@ -6,19 +6,18 @@ export default {
   component: Alert,
 };
 
-const Template = (args) => <Alert {...args}>{args.text}</Alert>;
+const Template = (args) => <Alert {...args} />;
 
 export const Success = Template.bind({});
 Success.args = {
   variant: 'success',
-  text: 'Notification bar',
-  closable: true,
+  content: 'Notification bar',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   variant: 'danger',
-  text: 'Error Message',
+  content: 'Error Message',
 };
 
 Success.story = {
