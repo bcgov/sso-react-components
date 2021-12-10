@@ -60,7 +60,7 @@ Primary.args = {
   title: 'First Section',
   variant: 'primary',
   circleDiameter: '40px',
-  circleMargin: '10px',
+  circleMargin: '20px',
 };
 
 Primary.story = {
