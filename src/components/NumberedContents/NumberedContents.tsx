@@ -53,7 +53,7 @@ export default function NumberedContents({
   children,
   showLine = true,
   circleDiameter = '40px',
-  circleMargin = '10px',
+  circleMargin = '20px',
   variant = 'primary',
 }: Props) {
   return (
