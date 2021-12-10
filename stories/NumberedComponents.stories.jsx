@@ -42,7 +42,12 @@ const Template = (args) => (
         Dev Redirect URIs: <strong>nnn</strong>
       </span>
     </NumberedContents>
-    <NumberedContents {...args} number={2} title="Your environments(s) will be provisioned by the SSO Pathfinder team">
+    <NumberedContents
+      {...args}
+      number={2}
+      title="Your environments(s) will be provisioned by the SSO Pathfinder team"
+      showLine={false}
+    >
       <p>Once you submit the request, access will be provided in 20 minutes or fewer</p>
     </NumberedContents>
   </>
