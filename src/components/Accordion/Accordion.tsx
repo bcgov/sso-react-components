@@ -72,12 +72,14 @@ const ActionsContainer = styled.div`
   color: ${SECONDARY_BLUE};
   & span {
     cursor: pointer;
+    text-decoration: underline;
   }
 `;
 
 const Divider = styled.span`
   border-right: 1px solid black;
-  margin: 0 9px;
+  height: 1em;
+  margin: auto 0.5em;
 `;
 
 function Accordion({ children, open = false }: Props) {
