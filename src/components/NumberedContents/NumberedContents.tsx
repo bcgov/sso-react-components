@@ -22,7 +22,7 @@ const Line = styled.div<{ circleDiameter: string }>`
 
 const ContentContainer = styled.div`
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 60px 1fr;
 `;
 
 const TitleContainer = styled.div<{ variant: string }>`
