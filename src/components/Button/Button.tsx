@@ -49,7 +49,7 @@ export const styles = {
     },
     secondary: {
       button: `
-        border: 3px solid #1a4dff;
+        box-shadow: 0px 0px 0px 3px #1a4dff inset;
         color: #1a4dff;
         background-color: #ffffff;
 
