@@ -48,7 +48,7 @@ const Template = (args) => (
       title="Your environments(s) will be provisioned by the SSO Pathfinder team"
       showLine={false}
     >
-      <p>Once you submit the request, access will be provided in 20 minutes or fewer</p>
+      <span>Once you submit the request, access will be provided in 20 minutes or fewer</span>
     </NumberedContents>
   </>
 );
