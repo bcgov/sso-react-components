@@ -38,6 +38,12 @@ BcPrimary.args = {
   text: 'Cancel',
 };
 
+export const PlainText = Template.bind({});
+PlainText.args = {
+  variant: 'plainText',
+  text: 'Cancel',
+};
+
 Callout.story = {
   parameters: {
     design: {
