@@ -47,6 +47,12 @@ export const styles = {
         color: #e8edff;
       `,
     },
+    plainText: {
+      button: `
+        background-color: unset;
+        color: #0139ff;
+      `,
+    },
     secondary: {
       button: `
         box-shadow: 0px 0px 0px 3px #1a4dff inset;
