@@ -53,6 +53,12 @@ export const styles = {
         color: #0139ff;
       `,
     },
+    danger: {
+      button: `
+        background-color: #ff1c1c;
+        color: white;
+      `,
+    },
     secondary: {
       button: `
         box-shadow: 0px 0px 0px 3px #1a4dff inset;

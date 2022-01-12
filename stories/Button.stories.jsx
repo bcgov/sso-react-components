@@ -44,6 +44,12 @@ PlainText.args = {
   text: 'Cancel',
 };
 
+export const Danger = Template.bind({});
+Danger.args = {
+  variant: 'danger',
+  text: 'Cancel',
+};
+
 Callout.story = {
   parameters: {
     design: {
