@@ -20,21 +20,16 @@ const Line = styled.div<{ circleDiameter: string }>`
   margin-left: calc(${(props) => props.circleDiameter} / 2);
 `;
 
-const ContentContainer = styled.div`
-  display: grid;
-  grid-template-columns: 50px 1fr;
+const Title = styled.h2<{ variant: string }>`
+  margin: auto 0;
+  color: ${(props) => (props.variant === 'primary' ? 'black' : '#777777')};
+  font-size: ${(props) => (props.variant === 'primary' ? '22px' : '18px')};
 `;
 
-const TitleContainer = styled.div<{ variant: string }>`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-
-  & h2 {
-    margin: 0;
-    color: ${(props) => (props.variant === 'primary' ? 'black' : '#777777')};
-    font-size: ${(props) => (props.variant === 'primary' ? '22px' : '18px')};
-  }
+const Grid = styled.div<{ numberedSectionWidth: string; numberedSectionHeight: string }>`
+  display: grid;
+  grid-template-columns: ${(props) => props.numberedSectionWidth} 1fr;
+  grid-template-rows: ${(props) => props.numberedSectionHeight} 1fr;
 `;
 
 interface Props {
@@ -53,21 +48,22 @@ export default function NumberedContents({
   children,
   showLine = true,
   circleDiameter = '40px',
-  circleMargin = '10px',
+  circleMargin = '5px',
   variant = 'primary',
 }: Props) {
+  const circleDiameterInt = Number(circleDiameter.slice(0, -2));
+  const circleMarginInt = Number(circleMargin.slice(0, -2));
+  const numberedSectionWidth = `${circleDiameterInt + circleMarginInt * 2}px`;
+  const numberedSectionHeight = `${circleDiameterInt + circleMarginInt * 2}px`;
+
   return (
-    <div>
-      <TitleContainer variant={variant}>
-        <Circle variant={variant} circleDiameter={circleDiameter} circleMargin={circleMargin}>
-          {number}
-        </Circle>
-        <h2>{title} </h2>
-      </TitleContainer>
-      <ContentContainer>
-        {showLine ? <Line circleDiameter={circleDiameter} /> : <span />}
-        <div>{children}</div>
-      </ContentContainer>
-    </div>
+    <Grid numberedSectionWidth={numberedSectionWidth} numberedSectionHeight={numberedSectionHeight}>
+      <Circle variant={variant} circleDiameter={circleDiameter} circleMargin={circleMargin}>
+        {number}
+      </Circle>
+      <Title variant={variant}>{title} </Title>
+      {showLine ? <Line circleDiameter={circleDiameter} /> : <span />}
+      <div>{children}</div>
+    </Grid>
   );
 }

@@ -6,12 +6,11 @@ See the github pages link for a storybook instance of components.
 ## Workflow
 
 **Storybook**: This repository has branched-based deployments for the storybook instance. To update
-storybook, merge in a feature branch to the `dev` branch.
+storybook, merge in a feature branch to the `main` branch.
 
-**NPM**: Components will be published to NPM when creating a new release. To release the components
-on the dev branch:
+**NPM**: Components will be published to NPM when creating a new release. To release the components:
 
-1. Merge `dev` into `main`. This will automatically bump the package version based on the commits and generate a tag for the release.
+1. Merge your feature branch into `main`. This will automatically bump the package version based on the commits and generate a tag for the release.
 2. Create a new [release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) using the generated tag.
 
 ## Adding Components

@@ -26,6 +26,24 @@ Secondary.args = {
   text: 'Cancel',
 };
 
+export const BcSecondary = Template.bind({});
+BcSecondary.args = {
+  variant: 'bcSecondary',
+  text: 'Cancel',
+};
+
+export const BcPrimary = Template.bind({});
+BcPrimary.args = {
+  variant: 'bcPrimary',
+  text: 'Cancel',
+};
+
+export const PlainText = Template.bind({});
+PlainText.args = {
+  variant: 'plainText',
+  text: 'Cancel',
+};
+
 Callout.story = {
   parameters: {
     design: {

@@ -28,12 +28,12 @@ export const styles = {
   variant: {
     danger: {
       container: `
-        background-color: #FEE8E6;
+        background-color: #EAC2C1;
       `,
     },
     success: {
       container: `
-        background-color: #E5F9E6;
+        background-color: #C4D8CF;
       `,
     },
   },
