@@ -1,6 +1,6 @@
 import { applyTheme, StyleConfig } from '@button-inc/component-library/Notification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle, faCheckCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationTriangle, faCheckCircle, faInfo } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 export const styles = {
@@ -113,7 +113,7 @@ const InfoIcon = (
     }}
   >
     <FontAwesomeIcon
-      icon={faInfoCircle}
+      icon={faInfo}
       style={{
         color: '#000',
         marginBottom: '0.1em',
