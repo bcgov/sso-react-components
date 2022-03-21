@@ -53,7 +53,7 @@ const config: StyleConfig = {
 
 const DefaultAlert = applyTheme(styles, config);
 
-type Variant = 'danger' | 'success';
+type Variant = 'danger' | 'success' | 'info';
 
 interface Props {
   variant?: Variant;
