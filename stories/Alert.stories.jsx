@@ -11,13 +11,19 @@ const Template = (args) => <Alert {...args} />;
 export const Success = Template.bind({});
 Success.args = {
   variant: 'success',
-  content: 'Notification bar',
+  content: 'Success Alert',
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   variant: 'danger',
-  content: 'Error Message',
+  content: 'Error Alert',
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  variant: 'info',
+  content: 'Info Alert',
 };
 
 Success.story = {
