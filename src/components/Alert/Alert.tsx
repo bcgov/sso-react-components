@@ -1,6 +1,6 @@
 import { applyTheme, StyleConfig } from '@button-inc/component-library/Notification';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamationTriangle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faExclamationTriangle, faCheckCircle, faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 
 export const styles = {
@@ -29,6 +29,11 @@ export const styles = {
     danger: {
       container: `
         background-color: #EAC2C1;
+      `,
+    },
+    info: {
+      container: `
+        background-color: #FFDD81;
       `,
     },
     success: {
@@ -94,10 +99,33 @@ const DangerIcon = (
   </div>
 );
 
+const InfoIcon = (
+  <div
+    style={{
+      backgroundColor: 'white',
+      marginRight: '1em',
+      borderRadius: '50%',
+      height: '1.5em',
+      width: '1.5em',
+      display: 'inline-block',
+      textAlign: 'center',
+      border: '1px solid #434a44',
+    }}
+  >
+    <FontAwesomeIcon
+      icon={faInfoCircle}
+      style={{
+        color: '#000',
+        marginBottom: '0.1em',
+      }}
+      size="sm"
+    ></FontAwesomeIcon>
+  </div>
+);
+
 const Alert = (props: Props) => (
   <DefaultAlert {...props}>
-    {props.variant === 'success' && SuccessIcon}
-    {props.variant === 'danger' && DangerIcon}
+    {props.variant === 'success' ? SuccessIcon : props.variant === 'danger' ? DangerIcon : InfoIcon}
     {props.children}
     {props.content}
     <DefaultAlert.Close>X</DefaultAlert.Close>
