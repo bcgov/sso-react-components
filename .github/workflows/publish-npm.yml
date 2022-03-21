@@ -3,14 +3,6 @@ on:
   release:
     types: [created]
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: 'Automated Version Bump'
-        uses: 'phips28/gh-action-bump-version@master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   release:
     runs-on: ubuntu-latest
     steps:
@@ -19,8 +11,10 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install
-      - run: npm run rollup
-      - run: npm publish --access public
+      - name: Publish Package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn
+          yarn rollup
+          npm publish --access public
