@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { createHashHistory } from 'history';
 import styled from 'styled-components';
 import flatten from 'lodash.flatten';
+import kebabCase from 'lodash.kebabcase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
 import { LANDING_HEADER_FONT, SECONDARY_BLUE } from '../../styles/theme';
@@ -37,7 +39,8 @@ const Header = styled.div`
   }
 `;
 
-function Accordionpanel({ title, allOpen, setAllOpen, children }: any) {
+function AccordionPanel({ title, hash, allOpen, setAllOpen, children }: any) {
+  const id = kebabCase(title);
   const [open, setOpen] = useState(allOpen);
 
   const handleClick = () => {
@@ -50,10 +53,14 @@ function Accordionpanel({ title, allOpen, setAllOpen, children }: any) {
     setOpen(allOpen);
   }, [allOpen]);
 
+  useEffect(() => {
+    if (hash === id) setOpen(true);
+  }, [hash]);
+
   return (
     <Container>
       <Header onClick={handleClick}>
-        <span>{title}</span>
+        <span id={id}>{title}</span>
         <FontAwesomeIcon icon={open ? faAngleUp : faAngleDown} size="2x"></FontAwesomeIcon>
       </Header>
       <SmoothTransition open={open}>{children}</SmoothTransition>
@@ -83,8 +90,17 @@ const Divider = styled.span`
 `;
 
 function Accordion({ children, open = false }: Props) {
+  const [hash, setHash] = useState<string>('');
   const [allOpen, setAllOpen] = useState<boolean>(open);
-  console.log(LANDING_HEADER_FONT);
+
+  useEffect(() => {
+    let history = createHashHistory();
+    let unlisten = history.listen(({ action, location }) => {
+      setHash(location.pathname);
+    });
+
+    return () => unlisten();
+  }, []);
 
   const handleClose = () => {
     setAllOpen(false);
@@ -102,11 +118,11 @@ function Accordion({ children, open = false }: Props) {
         <span onClick={handleClose}>Collapse All</span>
       </ActionsContainer>
       {Array.isArray(children)
-        ? flatten(children).map((child: any) => React.cloneElement(child, { allOpen, setAllOpen }))
+        ? flatten(children).map((child: any) => React.cloneElement(child, { hash, allOpen, setAllOpen }))
         : React.cloneElement(children, { allOpen, setAllOpen })}
     </>
   );
 }
 
-Accordion.Panel = Accordionpanel;
+Accordion.Panel = AccordionPanel;
 export default Accordion;
