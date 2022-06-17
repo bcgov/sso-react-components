@@ -1,21 +1,29 @@
 name: Publish Storybook
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types: [closed]
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v3
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           node-version: 16
-      - run: |
-          yarn
-          yarn deploy-storybook -- --ci --source-branch dev
+      - name: Install and Build
+        run: yarn
+          yarn run build-storybook
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
