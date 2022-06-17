@@ -14,10 +14,41 @@ export default {
 const Template = (args) => (
   <>
     <NumberedContents {...args}>
-      <p>First line</p>
+      <span>
+        Are you accountable for this project: <strong>Yes</strong>
+      </span>
+      <br />
+      <span>
+        Client Type: <strong>Confidential</strong>
+      </span>
+      <br />
+      <span>
+        Project Name: <strong>zz</strong>
+      </span>
+      <br />
+      <span>
+        Default email address: <strong>lada.miaous@gov.bc.ca</strong>
+      </span>
+      <br />
+      <span>
+        Additional Emails: <strong></strong>
+      </span>
+      <br />
+      <span>
+        Identity Providers Required: <strong></strong>
+      </span>
+      <br />
+      <span>
+        Dev Redirect URIs: <strong>nnn</strong>
+      </span>
     </NumberedContents>
-    <NumberedContents {...args} number={2} title="Second Section">
-      <p>Second Line</p>
+    <NumberedContents
+      {...args}
+      number={2}
+      title="Your environments(s) will be provisioned by the SSO Pathfinder team"
+      showLine={false}
+    >
+      <span>Once you submit the request, access will be provided in 20 minutes or fewer</span>
     </NumberedContents>
   </>
 );
@@ -29,14 +60,14 @@ Primary.args = {
   title: 'First Section',
   variant: 'primary',
   circleDiameter: '40px',
-  circleMargin: '10px',
+  circleMargin: '5px',
 };
 
 Primary.story = {
   parameters: {
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/proto/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=795%3A2303&scaling=contain&page-id=505%3A1169&starting-point-node-id=802%3A2320&show-proto-sidebar=1',
+      url: 'https://www.figma.com/file/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=1635%3A2305',
     },
   },
 };

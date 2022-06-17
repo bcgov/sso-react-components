@@ -47,12 +47,65 @@ export const styles = {
         color: #e8edff;
       `,
     },
+    plainText: {
+      button: `
+        background-color: unset;
+        color: #0139ff;
+      `,
+    },
+    danger: {
+      button: `
+        background-color: #ff1c1c;
+        color: white;
+      `,
+    },
     secondary: {
       button: `
-        border: 3px solid #1a4dff;
+        box-shadow: 0px 0px 0px 3px #1a4dff inset;
         color: #1a4dff;
         background-color: #ffffff;
 
+      `,
+    },
+    bcPrimary: {
+      button: `
+        background-color: #003366;
+        box-shadow: 0px 0px 0px 2px #003366 inset !important;
+        color: #fff;
+        border-radius: 0.222em;
+        &:hover {
+          text-decoration: underline;
+          opacity: 0.80;
+        }
+        &:focus {
+          outline: 4px solid #3B99FC;
+          outline-offset: 1px;
+        }
+        &:active {
+          opacity: 1;
+        }
+        &:disabled {
+          background-color: #003366;
+          box-shadow: 0px 0px 0px 2px #fff inset !important;
+          color: #fff;
+          cursor: not-allowed;
+          opacity: 0.3;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      `,
+    },
+    bcSecondary: {
+      button: `
+        background-color: #b2b2b2;
+        border-radius: 0.222em;
+        color: white;
+        box-shadow: none !important;
+
+        &:hover {
+          background-color: #b2b2b2;
+        }
       `,
     },
   },

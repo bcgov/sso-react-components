@@ -2,20 +2,20 @@ name: Publish Storybook
 on:
   pull_request:
     branches:
-      - dev
+      - main
     types: [closed]
+
 jobs:
   build:
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-      - run: |
-          npm i
-          npm i react react-dom
-          npm run deploy-storybook -- --ci --source-branch dev
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         env:
-          GH_TOKEN: ${{ secrets.PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          node-version: 16
+      - run: |
+          yarn
+          yarn deploy-storybook -- --ci --source-branch dev

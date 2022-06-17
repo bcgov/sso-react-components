@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { createHashHistory } from 'history';
 import styled from 'styled-components';
 import flatten from 'lodash.flatten';
+import kebabCase from 'lodash.kebabcase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import { LANDING_HEADER_FONT, SECONDARY_BLUE } from "../../styles/theme";
+import { LANDING_HEADER_FONT, SECONDARY_BLUE } from '../../styles/theme';
 
 const ACCORDION_HEADER_COLOR = '#eaeaea';
 const ACCORDION_BODY_COLOR = '#f5f5f5';
@@ -37,7 +39,8 @@ const Header = styled.div`
   }
 `;
 
-function Accordionpanel({ title, allOpen, setAllOpen, children }: any) {
+function AccordionPanel({ title, hash, allOpen, setAllOpen, children }: any) {
+  const id = kebabCase(title);
   const [open, setOpen] = useState(allOpen);
 
   const handleClick = () => {
@@ -50,10 +53,14 @@ function Accordionpanel({ title, allOpen, setAllOpen, children }: any) {
     setOpen(allOpen);
   }, [allOpen]);
 
+  useEffect(() => {
+    if (hash === id) setOpen(true);
+  }, [hash]);
+
   return (
     <Container>
       <Header onClick={handleClick}>
-        <span>{title}</span>
+        <span id={id}>{title}</span>
         <FontAwesomeIcon icon={open ? faAngleUp : faAngleDown} size="2x"></FontAwesomeIcon>
       </Header>
       <SmoothTransition open={open}>{children}</SmoothTransition>
@@ -63,6 +70,7 @@ function Accordionpanel({ title, allOpen, setAllOpen, children }: any) {
 
 interface Props {
   children: any;
+  open?: boolean;
 }
 
 const ActionsContainer = styled.div`
@@ -71,17 +79,28 @@ const ActionsContainer = styled.div`
   color: ${SECONDARY_BLUE};
   & span {
     cursor: pointer;
+    text-decoration: underline;
   }
 `;
 
 const Divider = styled.span`
   border-right: 1px solid black;
-  margin: 0 9px;
+  height: 1em;
+  margin: auto 0.5em;
 `;
 
-function Accordion({ children }: Props) {
-  const [allOpen, setAllOpen] = useState<boolean | null>(null);
-  console.log(LANDING_HEADER_FONT)
+function Accordion({ children, open = false }: Props) {
+  const [hash, setHash] = useState<string>('');
+  const [allOpen, setAllOpen] = useState<boolean>(open);
+
+  useEffect(() => {
+    let history = createHashHistory();
+    let unlisten = history.listen(({ action, location }) => {
+      setHash(location.pathname);
+    });
+
+    return () => unlisten();
+  }, []);
 
   const handleClose = () => {
     setAllOpen(false);
@@ -99,13 +118,11 @@ function Accordion({ children }: Props) {
         <span onClick={handleClose}>Collapse All</span>
       </ActionsContainer>
       {Array.isArray(children)
-        ? flatten(children).map((child: any) =>
-            React.cloneElement(child, { allOpen, setAllOpen })
-          )
+        ? flatten(children).map((child: any) => React.cloneElement(child, { hash, allOpen, setAllOpen }))
         : React.cloneElement(children, { allOpen, setAllOpen })}
     </>
   );
 }
 
-Accordion.Panel = Accordionpanel;
+Accordion.Panel = AccordionPanel;
 export default Accordion;
