@@ -20,7 +20,8 @@ jobs:
         with:
           node-version: 16
       - name: Install and Build
-        run: yarn
+        run: |
+          yarn
           yarn run build-storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
