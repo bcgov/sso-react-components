@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencil, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Table from 'src/components/Table';
 
 export default {
@@ -14,6 +16,7 @@ const Template = (args) => (
         <th>Project Name</th>
         <th>Status</th>
         <th>Service Type</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -22,12 +25,22 @@ const Template = (args) => (
         <td>Education</td>
         <td>Completed</td>
         <td>Gold</td>
+        <td>
+          <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+          &nbsp; &nbsp;
+          <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
+        </td>
       </tr>
       <tr className="active">
         <td>00005678</td>
         <td>Health</td>
         <td>Draft</td>
         <td>Silver</td>
+        <td>
+          <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
+          &nbsp; &nbsp;
+          <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
+        </td>
       </tr>
     </tbody>
   </Table>
