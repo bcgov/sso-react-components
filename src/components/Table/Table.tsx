@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const TABLE_BACKGROUND_COLOR = '#ededed';
 export const TABLE_ROW_ACTIVE_COLOR = '#4950FA';
+export const TABLE_ROW_HOVER_COLOR = '#fdb913';
 export const TABLE_ROW_HEIGHT = 40;
 export const TABLE_ROW_HEIGHT_MINI = 40;
 export const TABLE_ROW_SPACING = 5;
@@ -48,15 +49,15 @@ const Table = styled.table<{ variant?: string; readOnly?: boolean }>`
       ${(props) =>
         !props.readOnly &&
         `
-        &:hover {
-          background-color: ${TABLE_ROW_ACTIVE_COLOR};
-          color: #fff;
-          cursor: pointer;
-        }
         &.active {
           background-color: ${TABLE_ROW_ACTIVE_COLOR};
           color: #fff;
           font-weight: bold;
+        }
+        &:hover {
+          background-color: ${TABLE_ROW_HOVER_COLOR};
+          color: #fff;
+          cursor: pointer;
         }
       `}
     }
