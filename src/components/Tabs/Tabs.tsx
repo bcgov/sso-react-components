@@ -1,23 +1,23 @@
 import styled from 'styled-components';
-import { Tab } from 'react-tabs';
+import Tabs, { TabPane } from "rc-tabs";
 
 export const SUBTITLE_FONT_SIZE = '18px';
 
-const Tabs = styled(Tab)`
-.nav-link {
+const Tab = styled(Tabs)`
+{
   color: black !important;
-  height: 30px !important;
+  height: 20px !important;
   font-size: ${SUBTITLE_FONT_SIZE} !important;
   padding-top: 0; !important;
   border-top: unset !important;
   border-left: unset !important;
   border-right: unset !important;
 }
-.nav-link.active {
+  &: active {
   background-color: unset !important;
   border-bottom: 3px solid orange;
   font-weight: 600;
 }
 `;
 
-export default Tabs; 
+export default Tab; 

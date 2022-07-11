@@ -1,22 +1,30 @@
 import React from 'react';
-import Tabs from 'src/components/Tabs';
+import Tab from 'src/components/Tabs';
+import Tabs, { TabPane } from "rc-tabs";
 
 export default {
-  title: 'Tabs',
-  component: Tabs,
+  title: 'Tab',
+  component: Tab,
 };
 
+function callback(key) {
+  console.log(key);
+}
+
+//const tabs = "1" | "2" | "3";
+
 const Template = (args) => (
-  <Tabs {...args}>
-    <Tab title="Tab 1"/>
-    <Tab title="Tab 2"/>
-  </Tabs>
+  <Tab {...args} defaultActiveKey="1" onTabClick={callback} style={{display:'inline-block'}}>
+    <TabPane tab="Tab 1" key="1"/>
+    <TabPane tab="Tab 2" key="2"/>
+    <TabPane tab="Tab 3" key="3"/>
+  </Tab>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   variant: 'Default',
-  content: 'Default Tabs',
+  content: 'Default Tab',
 };
 
 Default.story = {
