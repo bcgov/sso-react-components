@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Tabs, { TabPane } from "rc-tabs";
+import Tabs, { TabPane } from 'rc-tabs';
 
 export const SUBTITLE_FONT_SIZE = '18px';
 
@@ -13,13 +13,14 @@ const Tab = styled(Tabs)`
   border-top: unset !important;
   border-left: unset !important;
   border-right: unset !important;
+
+  &:active {
+    background-color: unset !important;
+    border-bottom: 3px solid orange;
+    font-weight: 600;
   }
-  
-.rc-tabs-tab:active {
-  background-color: unset !important;
-  border-bottom: 3px solid orange;
-  font-weight: 600;
 }
+
 `;
 
-export default Tab; 
+export default Tab;
