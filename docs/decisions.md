@@ -15,6 +15,7 @@ The decision on choosing the third-party open source library for `Tabs component
 ## Candidates
 - **rc-tabs**
 - **react-tabs**
+- **react-navigation/bottom-tabs**
 
 ## Comparison
 
