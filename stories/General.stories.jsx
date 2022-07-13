@@ -4,32 +4,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default {
-    title: 'General',
-    component: General,
-  };
+  title: 'General',
+  component: General,
+};
 
 const generalTemplate = (args) => <General {...args}>{args.text}</General>;
 
 const scrollbarTemplate = (args) => (
-  <General {...args} style={{height: '130px', width: '250px'}}>
+  <General {...args} style={{ height: '130px', width: '250px' }}>
     <p>some content here</p>
     <p>some content here</p>
     <p>some content here</p>
     <p>some content here</p>
     <p>some content here</p>
   </General>
-)
+);
 
 const lastSavedTemplate = (args) => (
-  <General {...args} style={{border: '1px black solid'}}>
+  <General {...args} style={{ border: '1px black solid' }}>
     <FontAwesomeIcon style={{ color: '#006fc4', marginRight: '10px' }} icon={faCheck} />
     {args.text}
   </General>
-)
+);
 
-const containerTemplate = (args) => (
-  <General {...args} style={{height: '200px', width: '300px'}} />
-)
+const containerTemplate = (args) => <General {...args} style={{ height: '200px', width: '300px' }} />;
 
 export const primaryUnselectedHeader = generalTemplate.bind({});
 primaryUnselectedHeader.args = {

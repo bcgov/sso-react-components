@@ -1,41 +1,41 @@
 import { applyTheme, StyleConfig } from '@button-inc/component-library/Button';
 
 export const styles = {
-    variant: {
-        primaryUnselectedHeader: `
+  variant: {
+    primaryUnselectedHeader: `
             font-size: 22px;
             font-weight: bold;
             `,
-        primarySelectedHeader: `
+    primarySelectedHeader: `
             font-size: 22px;
             font-weight: bold;
             color: #0139FF;
             `,
-        secondaryHeader: `
+    secondaryHeader: `
             font-weight: bold;
             `,
-        generalScrollbar: `
+    generalScrollbar: `
             overflow: auto;
             `,
-        generalLastSaved: `
+    generalLastSaved: `
             `,
-        generalInfoText: `
+    generalInfoText: `
             font-style: italic;
             font-size: 0.9rem;
             `,
-        bottomHalfContainerBorder: `
+    bottomHalfContainerBorder: `
             border: 3px solid #0139FF;
             border-radius: 10px;
             `,
-    },
-}
+  },
+};
 
 const config: StyleConfig = {
-    defaultProps: {
-      variant: 'primaryUnselectedHeader',
-    },
-    staticProps: [],
-  };
+  defaultProps: {
+    variant: 'primaryUnselectedHeader',
+  },
+  staticProps: [],
+};
 
 const General = applyTheme(styles, config);
 
