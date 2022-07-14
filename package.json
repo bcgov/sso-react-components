@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/bcgov/sso-react-components#readme",
   "dependencies": {
+    "@button-inc/bcgov-theme": "^1.0.1",
     "@button-inc/component-library": "^1.0.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -32,6 +33,7 @@
     "lodash.kebabcase": "^4.1.1",
     "pre-commit": "^1.2.2",
     "rc-tabs": "^11.16.0",
+    "react-select": "^5.4.0",
     "styled-components": "^5.3.5"
   },
   "peerDependencies": {
