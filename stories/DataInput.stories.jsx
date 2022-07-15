@@ -6,38 +6,15 @@ export default {
   component: DataInput,
 };
 
-const dropDownTemplate = (args) => (
-  <DataInput {...args} label="Label" size="small">
-    <option value="option1">Option 1</option>
-    <option value="option2">Option 2</option>
-  </DataInput>
-);
+const Template = (args) => <DataInput type="text" maxLength="100" placeholder={'Enter search criteria'} />;
 
-const searchBarTemplate = (args) => (
-  <DataInput {...args} type="text" size="small" maxLength="1000" placeholder={'Enter search criteria'} />
-);
+export const SearchBar = Template.bind({});
 
-const multiSelectTemplate = (args) => (
-  <DataInput
-    {...args}
-    value={'selection 1'}
-    isMulti={true}
-    placeholder="Select..."
-    noOptionsMessage={() => 'No selections'}
-  />
-);
-
-export const Dropdown = dropDownTemplate.bind({});
-Dropdown.args = {
-  variant: 'dropDown',
-};
-
-export const SearchBar = searchBarTemplate.bind({});
-SearchBar.args = {
-  variant: 'searchBar',
-};
-
-export const multiSelect = multiSelectTemplate.bind({});
-multiSelect.args = {
-  variant: 'multiSelect',
+SearchBar.story = {
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=5578%3A891',
+    },
+  },
 };

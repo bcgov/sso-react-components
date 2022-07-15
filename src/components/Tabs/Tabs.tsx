@@ -7,7 +7,7 @@ const Tab = styled(Tabs)`
 .rc-tabs-tab {
   display: inline-block;
   color: black !important;
-  height: 20px !important;
+  height: 30px !important;
   font-size: ${SUBTITLE_FONT_SIZE} !important;
   padding-top: 0; !important;
   border-top: unset !important;

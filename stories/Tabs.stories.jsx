@@ -7,13 +7,15 @@ export default {
   component: Tab,
 };
 
-function callback(key) {
+const tabPane = '1' | '2' | '3';
+
+const callback = (key) => {
   console.log(key);
-}
+};
 
 const Template = (args) => (
   <>
-    <Tab {...args} defaultActiveKey="1" onTabClick={callback} tabBarGutter={20}>
+    <Tab {...args} activeKey={tabPane} onChange={callback} tabBarGutter={20}>
       <TabPane tab="Tab 1" key="1">
         tab 1 content
       </TabPane>
