@@ -6,9 +6,12 @@ export default {
   component: DataInput,
 };
 
-const Template = (args) => <DataInput type="text" maxLength="100" placeholder={'Enter search criteria'} />;
+const Template = (args) => <DataInput {...args} type="text" maxLength="100" placeholder={'Enter search criteria'} />;
 
 export const SearchBar = Template.bind({});
+SearchBar.args = {
+  className: 'searchBar',
+};
 
 SearchBar.story = {
   parameters: {

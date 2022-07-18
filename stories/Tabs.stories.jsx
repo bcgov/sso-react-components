@@ -7,35 +7,23 @@ export default {
   component: Tab,
 };
 
-const tabPane = '1' | '2' | '3';
-
-const callback = (key) => {
-  console.log(key);
-};
-
 const Template = (args) => (
   <>
-    <Tab {...args} activeKey={tabPane} onChange={callback} tabBarGutter={20}>
-      <TabPane tab="Tab 1" key="1">
-        tab 1 content
-      </TabPane>
-      <TabPane tab="Tab 2" key="2">
-        tab 2 content
-      </TabPane>
-      <TabPane tab="Tab 3" key="3">
-        tab 3 content
-      </TabPane>
+    <Tab {...args} tabBarGutter={20}>
+      <TabPane tab="Tab 1" key="1" />
+      <TabPane tab="Tab 2" key="2" />
+      <TabPane tab="Tab 3" key="3" />
     </Tab>
   </>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const PrimarySelectedTab = Template.bind({});
+PrimarySelectedTab.args = {
   variant: 'Default',
   content: 'Default Tab',
 };
 
-Default.story = {
+PrimarySelectedTab.story = {
   parameters: {
     design: {
       type: 'figma',

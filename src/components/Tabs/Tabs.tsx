@@ -14,7 +14,7 @@ const Tab = styled(Tabs)`
   border-left: unset !important;
   border-right: unset !important;
 
-  &:active {
+  &.rc-tabs-tab-active {
     background-color: unset !important;
     border-bottom: 3px solid orange;
     font-weight: 600;
