@@ -1,19 +1,18 @@
 import React from 'react';
-import Tab from 'src/components/Tabs';
-import Tabs, { TabPane } from 'rc-tabs';
+import Tabs, { Tab } from 'src/components/Tabs';
 
 export default {
-  title: 'Tab',
-  component: Tab,
+  title: 'Tabs',
+  component: Tabs,
 };
 
 const Template = (args) => (
   <>
-    <Tab {...args} tabBarGutter={20}>
-      <TabPane tab="Tab 1" key="1" />
-      <TabPane tab="Tab 2" key="2" />
-      <TabPane tab="Tab 3" key="3" />
-    </Tab>
+    <Tabs {...args} onChange tabBarGutter={20}>
+      <Tab tab="Tab 1" key="1" />
+      <Tab tab="Tab 2" key="2" />
+      <Tab tab="Tab 3" key="3" />
+    </Tabs>
   </>
 );
 
