@@ -16,13 +16,13 @@ const Template = (args) => (
   </>
 );
 
-export const PrimarySelectedTab = Template.bind({});
-PrimarySelectedTab.args = {
+export const DefaultTabs = Template.bind({});
+DefaultTabs.args = {
   variant: 'Default',
   content: 'Default Tab',
 };
 
-PrimarySelectedTab.story = {
+DefaultTabs.story = {
   parameters: {
     design: {
       type: 'figma',
