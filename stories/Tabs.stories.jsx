@@ -1,39 +1,28 @@
 import React from 'react';
-import Tab from 'src/components/Tabs';
-import Tabs, { TabPane } from 'rc-tabs';
+import Tabs, { Tab } from 'src/components/Tabs';
 
 export default {
-  title: 'Tab',
-  component: Tab,
+  title: 'Tabs',
+  component: Tabs,
 };
-
-function callback(key) {
-  console.log(key);
-}
 
 const Template = (args) => (
   <>
-    <Tab {...args} defaultActiveKey="1" onTabClick={callback} tabBarGutter={20}>
-      <TabPane tab="Tab 1" key="1">
-        tab 1 content
-      </TabPane>
-      <TabPane tab="Tab 2" key="2">
-        tab 2 content
-      </TabPane>
-      <TabPane tab="Tab 3" key="3">
-        tab 3 content
-      </TabPane>
-    </Tab>
+    <Tabs {...args} onChange tabBarGutter={20}>
+      <Tab tab="Tab 1" key="1" />
+      <Tab tab="Tab 2" key="2" />
+      <Tab tab="Tab 3" key="3" />
+    </Tabs>
   </>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const DefaultTabs = Template.bind({});
+DefaultTabs.args = {
   variant: 'Default',
   content: 'Default Tab',
 };
 
-Default.story = {
+DefaultTabs.story = {
   parameters: {
     design: {
       type: 'figma',
