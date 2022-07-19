@@ -12,8 +12,6 @@ const StyledTabs = styled(Tabs)`
     border-bottom: 3px solid orange;
     font-weight: 600;
   }
-}
-
 `;
 
 export default StyledTabs;
