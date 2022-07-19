@@ -10,7 +10,7 @@ const Template = (args) => <Border {...args} style={{ height: '150px', width: '3
 
 export const BottomHalfContainerBorder = Template.bind({});
 BottomHalfContainerBorder.args = {
-  className: 'bottomHalfContainerBorder',
+  className: 'blue-radius',
 };
 
 BottomHalfContainerBorder.story = {

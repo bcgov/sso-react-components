@@ -10,19 +10,19 @@ const Template = (args) => <Header {...args}>{args.text}</Header>;
 
 export const PrimaryUnselectedHeader = Template.bind({});
 PrimaryUnselectedHeader.args = {
-  className: 'primaryUnselectedHeader',
+  className: 'text-22px-font',
   text: 'INTEGRATIONS',
 };
 
 export const PrimarySelectedHeader = Template.bind({});
 PrimarySelectedHeader.args = {
-  className: 'primarySelectedHeader',
+  className: 'text-bold-blue',
   text: 'INTEGRATION DETAILS - 00007374',
 };
 
 export const SecondaryHeader = Template.bind({});
 SecondaryHeader.args = {
-  className: 'secondaryHeader',
+  className: 'text-bold',
   text: '1. Search for User',
 };
 

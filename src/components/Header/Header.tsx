@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
 const Header = styled.header`
-  &.primaryUnselectedHeader {
+  &.text-bold {
+    font-weight: bold;
+  }
+  &.text-22px-font {
     font-size: 22px;
     font-weight: bold;
   }
-  &.primarySelectedHeader {
+  &.text-bold-blue {
     font-size: 22px;
     font-weight: bold;
     color: #0139ff;
   }
-  &.secondaryHeader {
-    font-weight: bold;
-  }
 `;
+
 export default Header;

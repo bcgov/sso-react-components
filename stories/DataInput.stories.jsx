@@ -1,4 +1,3 @@
-import React from 'react';
 import DataInput from 'src/components/DataInput';
 
 export default {
@@ -6,11 +5,11 @@ export default {
   component: DataInput,
 };
 
-const Template = (args) => <DataInput {...args} type="text" maxLength="100" placeholder={'Enter search criteria'} />;
+const Template = (args) => DataInput(args.placeholder);
 
 export const SearchBar = Template.bind({});
 SearchBar.args = {
-  className: 'searchBar',
+  placeholder: 'Enter search criteria',
 };
 
 SearchBar.story = {

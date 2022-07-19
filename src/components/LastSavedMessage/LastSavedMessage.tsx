@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const LastSavedMessage = styled.div`
-    &.lastSavedMessage {
-        margin-left: 10px;
+    &.top-margin {
+        margin-top: 5px;
     },
 `;
 

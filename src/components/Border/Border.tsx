@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Border = styled.div`
-  &.bottomHalfContainerBorder {
+  &.blue-radius {
     border: 3px solid #0139FF;
     border-radius: 10px;
     padding: 5px;

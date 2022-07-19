@@ -9,15 +9,15 @@ export default {
 };
 
 const Template = (args) => (
-  <LastSavedMessage {...args} style={{ border: '1px black solid', float: 'left', padding: '2px' }}>
-    <FontAwesomeIcon style={{ color: '#006fc4', marginRight: '10px' }} icon={faCheck} />
+  <LastSavedMessage {...args}>
+    <FontAwesomeIcon style={{ color: '#006fc4', marginRight: '10px', width: '30px' }} icon={faCheck} />
     {args.text}
   </LastSavedMessage>
 );
 
 export const LastSaved = Template.bind({});
 LastSaved.args = {
-  className: 'lastSavedMessage',
+  className: 'top-margin',
   text: 'Last saved at 5/9/2022, 8:44:49 AM',
 };
 

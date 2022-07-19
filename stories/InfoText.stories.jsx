@@ -10,7 +10,7 @@ const Template = (args) => <InfoText {...args}>{args.text}</InfoText>;
 
 export const DashboardInfoText = Template.bind({});
 DashboardInfoText.args = {
-  className: 'dashboardInfoText',
+  className: 'italic-font',
   text: '* If you did not find the user you were looking for, you can try searching for the user in our IDIR Lookup tool.',
 };
 
