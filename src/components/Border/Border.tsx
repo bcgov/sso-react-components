@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const colorMap: any = {
     primary: '#0139ff',
     dark: '#000',
-  };
+};
 
 const StyledBorder = styled.div<{ color?: string, radius?: string, borderWidth?: string, width?: string, height?: string }>`
 border-style: solid;  
@@ -23,12 +23,12 @@ interface Props {
     borderWidth?: string;
     width?: string;
     height?: string;
-  }
+}
 
-  const Border = ({ color, radius, borderWidth, width, height }: Props) => {
+const Border = ({ color, radius, borderWidth, width, height }: Props) => {
     return (
-      <StyledBorder color={color} radius={radius} borderWidth={borderWidth} width={width} height={height} />
-    );
-  };
+    <StyledBorder color={color} radius={radius} borderWidth={borderWidth} width={width} height={height} />
+      );
+};
 
 export default Border;
