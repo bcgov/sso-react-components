@@ -7,3 +7,4 @@ export { default as Tabs } from './Tabs';
 export { default as SearchBar } from './SearchBar';
 export { default as Header } from './Header';
 export { default as InfoText } from './InfoText';
+export { default as LastSavedMessage } from './LastSavedMessage';
