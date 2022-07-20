@@ -25,9 +25,9 @@ const StyledBorder = styled.div<{ color?: string; round?: string; borderWidth?: 
   height: auto;
   padding: 5px;
   ${(props) => `
-        border-color: ${colorMap[props.color || 'dark']};
-        border-width: ${widthMap[props.borderWidth || 'md']};
-        border-radius: ${radiusMap[props.round || 'none']};
+        border-color: ${colorMap[props.color || 'primary']};
+        border-width: ${widthMap[props.borderWidth || 'lg']};
+        border-radius: ${radiusMap[props.round || 'md']};
     `}
 `;
 
