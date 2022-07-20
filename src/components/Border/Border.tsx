@@ -14,8 +14,7 @@ const radiusMap: any = {
 };
 
 const widthMap: any = {
-  default: '1px',
-  sm: '1.5px',
+  sm: '1px',
   md: '2px',
   lg: '3px',
 };
