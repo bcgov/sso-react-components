@@ -7,14 +7,14 @@ const colorMap: any = {
 };
 
 const StyledBorder = styled.div<{ color?: string, radius?: string, borderWidth?: string, width?: string, height?: string }>`
-border-style: solid;  
-${(props) => `
-    border-color: ${colorMap[props.color || 'dark']};
-    border-width: ${props.borderWidth || '1px'};
-    border-radius: ${props.radius || '0px'};
-    width: ${props.width || '300px'};
-    height: ${props.height || '150px'};
-  `}
+    border-style: solid;  
+    ${(props) => `
+        border-color: ${colorMap[props.color || 'dark']};
+        border-width: ${props.borderWidth || '1px'};
+        border-radius: ${props.radius || '0px'};
+        width: ${props.width || '300px'};
+        height: ${props.height || '150px'};
+    `}
 `;
 
 interface Props {
