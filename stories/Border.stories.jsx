@@ -10,10 +10,10 @@ const Template = (args) => <Border {...args} />;
 
 export const PrimaryRoundBorder = Template.bind({});
 PrimaryRoundBorder.args = {
-    color: 'primary',
-    round: 'md',
-    borderWidth: 'lg',
-    children: 'Some content here...',
+  color: 'primary',
+  round: 'md',
+  borderWidth: 'lg',
+  children: 'Some content here...',
 };
 
 PrimaryRoundBorder.story = {
