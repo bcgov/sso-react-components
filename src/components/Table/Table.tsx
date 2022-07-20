@@ -69,6 +69,15 @@ const Table = styled.table<{ variant?: string; readOnly?: boolean }>`
     text-align: left;
   }
 
+  & th:last-child {
+    text-align: right;
+    padding-right: 1em;
+  }
+  & td:last-child {
+    text-align: right;
+    padding-right: 2em;
+  }
+
   & th,
   & td {
     border: none;
