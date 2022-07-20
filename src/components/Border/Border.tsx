@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import styled from 'styled-components';
 
 const colorMap: any = {
@@ -6,28 +6,42 @@ const colorMap: any = {
     dark: '#000',
 };
 
-const StyledBorder = styled.div<{ color?: string, radius?: string, borderWidth?: string, width?: string, height?: string }>`
-    border-style: solid;  
+const radiusMap: any = {
+    none: '',
+    sm: '5px',
+    md: '10px',
+    lg: '20px',
+};
+
+const widthMap: any = {
+    default: '1px',
+    sm: '1.5px',
+    md: '2px',
+    lg: '3px',
+};
+
+const StyledBorder = styled.div<{ color?: string, round?: string, borderWidth?: string }>`
+    border-style: solid;
+    width: 100%;
+    height: auto;
+    padding: 5px;
     ${(props) => `
         border-color: ${colorMap[props.color || 'dark']};
-        border-width: ${props.borderWidth || '1px'};
-        border-radius: ${props.radius || '0px'};
-        width: ${props.width || '300px'};
-        height: ${props.height || '150px'};
+        border-width: ${widthMap[props.borderWidth || 'default']};
+        border-radius: ${radiusMap[props.round || 'none']};
     `}
 `;
 
 interface Props {
     color?: string;
-    radius?: string;
+    round?: string;
     borderWidth?: string;
-    width?: string;
-    height?: string;
+    children?: React.ReactNode;
 }
 
-const Border = ({ color, radius, borderWidth, width, height }: Props) => {
+const Border = ({ color, round, borderWidth, children }: Props) => {
     return (
-    <StyledBorder color={color} radius={radius} borderWidth={borderWidth} width={width} height={height} />
+    <StyledBorder color={color} round={round} borderWidth={borderWidth}>{children}</StyledBorder>
       );
 };
 

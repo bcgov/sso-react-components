@@ -8,14 +8,15 @@ export default {
 
 const Template = (args) => <Border {...args} />;
 
-export const PrimaryBorder = Template.bind({});
-PrimaryBorder.args = {
+export const PrimaryRoundBorder = Template.bind({});
+PrimaryRoundBorder.args = {
     color: 'primary',
-    radius: '10px',
-    borderWidth: '3px',
+    round: 'md',
+    borderWidth: 'lg',
+    children: 'Some content here...',
 };
 
-PrimaryBorder.story = {
+PrimaryRoundBorder.story = {
   parameters: {
     design: {
       type: 'figma',
