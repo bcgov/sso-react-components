@@ -16,7 +16,7 @@ const Template = (args) => (
         <th>Project Name</th>
         <th>Status</th>
         <th>Service Type</th>
-        <th>Actions</th>
+        <th className="text-right">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +25,7 @@ const Template = (args) => (
         <td>Education</td>
         <td>Completed</td>
         <td>Gold</td>
-        <td>
+        <td className="text-right">
           <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
           &nbsp; &nbsp;
           <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
@@ -36,7 +36,7 @@ const Template = (args) => (
         <td>Health</td>
         <td>Draft</td>
         <td>Silver</td>
-        <td>
+        <td className="text-right">
           <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
           &nbsp; &nbsp;
           <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
