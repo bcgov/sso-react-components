@@ -41,7 +41,7 @@ const Template = (args) => (
 export const Open = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Open.args = {
-  title: 'Q. What is the difference between confidential and pubic client types?',
+  title: 'Q. What is the difference between confidential and public client types?',
   open: true,
 };
 

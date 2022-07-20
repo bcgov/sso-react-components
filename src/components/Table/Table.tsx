@@ -69,6 +69,16 @@ const Table = styled.table<{ variant?: string; readOnly?: boolean }>`
     text-align: left;
   }
 
+  & th.text-right {
+    text-align: right;
+    padding-right: 1em;
+  }
+
+  & td.text-right {
+    text-align: right;
+    padding-right: 2em;
+  }
+
   & th,
   & td {
     border: none;
