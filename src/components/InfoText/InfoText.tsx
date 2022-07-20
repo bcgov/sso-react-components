@@ -1,27 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const fontStyleMap: any = {
-  nmr: 'normal',
-  ita: 'italic',
-};
-
-const StyledInfoText = styled.div<{ variant?: string }>`
+const StyledInfoText = styled.div<{ italic?: boolean }>`
   font-size: 0.9rem;
   margin-bottom: 1rem;
   ${(props) => `
-        font-style: ${fontStyleMap[props.variant || 'nmr']};
+    font-style: ${props.italic ? 'italic' : 'normal'};
   `}
 `;
 
 interface Props {
-  variant?: string;
-  size?: string;
+  italic?: boolean;
   children: React.ReactNode;
 }
 
-const InfoText = ({ variant, children }: Props) => {
-  return <StyledInfoText variant={variant}>{children}</StyledInfoText>;
+const InfoText = ({ italic, children }: Props) => {
+  return <StyledInfoText italic={italic}>{children}</StyledInfoText>;
 };
 
 export default InfoText;
