@@ -5,21 +5,20 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 const Wrapper = styled.div`
   width: 100%;
+  position: relative;
 `;
 
 const Icon = styled.i`
-  position: relative;
-  right: 1.5em;
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
   color: grey;
-  top: 0.18em;
 `;
 
 const Input = styled.input`
+  width: 100%;
   border: 2px solid #606060;
-  padding-top: 0.4em;
-  padding-bottom: 0.4em;
-  padding-left: 0.6em;
-  padding-right: 2.3em;
+  padding: 0.3em 0.5em;
   border-radius: 0.25em;
 `;
 
