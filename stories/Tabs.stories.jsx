@@ -8,7 +8,7 @@ export default {
 
 const Template = (args) => (
   <>
-    <Tabs {...args} onChange tabBarGutter={20}>
+    <Tabs {...args} onChange tabBarGutter={20} style={{ width: '180px' }}>
       <Tab tab="Tab 1" key="1" />
       <Tab tab="Tab 2" key="2" />
       <Tab tab="Tab 3" key="3" />
