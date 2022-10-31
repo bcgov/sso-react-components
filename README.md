@@ -1,5 +1,7 @@
 # SSO React Components
 
+![Lifecycle:Stable](https://img.shields.io/badge/Lifecycle-Stable-97ca00)
+
 This library contains common react components shared by the SSO CSS app and realm registry.
 See the github pages link for a storybook instance of components.
 
