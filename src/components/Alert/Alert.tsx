@@ -58,6 +58,7 @@ type Variant = 'danger' | 'success' | 'info';
 interface Props {
   variant?: Variant;
   content?: string;
+  closable?: boolean;
   [key: string]: any;
 }
 
@@ -128,7 +129,7 @@ const Alert = (props: Props) => (
     {props.variant === 'success' ? SuccessIcon : props.variant === 'danger' ? DangerIcon : InfoIcon}
     {props.children}
     {props.content}
-    <DefaultAlert.Close>X</DefaultAlert.Close>
+    {props.closable && <DefaultAlert.Close>X</DefaultAlert.Close>}
   </DefaultAlert>
 );
 

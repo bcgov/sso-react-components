@@ -12,18 +12,21 @@ export const Success = Template.bind({});
 Success.args = {
   variant: 'success',
   content: 'Success Alert',
+  closable: true,
 };
 
 export const Danger = Template.bind({});
 Danger.args = {
   variant: 'danger',
   content: 'Error Alert',
+  closable: true,
 };
 
 export const Info = Template.bind({});
 Info.args = {
   variant: 'info',
   content: 'Info Alert',
+  closable: true,
 };
 
 Success.story = {
