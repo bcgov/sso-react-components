@@ -1,6 +1,6 @@
 {
   "name": "@bcgov-sso/common-react-components",
-  "version": "1.28.6",
+  "version": "1.28.5",
   "description": "common react components",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -47,7 +47,7 @@
     "terser": ">=5.14.2",
     "trim-newlines": ">=3.0.1",
     "glob-parent": ">=5.1.2",
-    "trim": ">=0.03",
+    "trim": ">=0.0.3",
     "loader-utils": ">=2.0.4"
   },
   "devDependencies": {
