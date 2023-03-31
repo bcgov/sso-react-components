@@ -9,6 +9,7 @@ module.exports = {
   async viteFinal(config) {
     return mergeConfig(config, {
       // Use the same "resolve" configuration as your app
+      base: './',
       resolve: {
         alias: {
           '@': path.resolve(__dirname, './'),
@@ -21,6 +22,7 @@ module.exports = {
           root: '../',
         }),
       ],
+      cacheDir: './node_modules/.vite/sso-react-components',
     });
   },
   core: {
