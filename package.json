@@ -47,7 +47,8 @@
     "terser": ">=5.14.2",
     "trim-newlines": ">=3.0.1",
     "glob-parent": ">=5.1.2",
-    "trim": ">=0.03"
+    "trim": ">=0.03",
+    "loader-utils": ">=2.0.4"
   },
   "devDependencies": {
     "vite": "^4.2.1",
@@ -71,7 +72,6 @@
     "@storybook/storybook-deployer": "^2.8.16",
     "@types/lodash": "^4.14.182",
     "@types/lodash.flatten": "^4.4.7",
-    "babel-loader": "^9.1.2",
     "babel-preset-react": "^6.24.1",
     "prettier": "^2.7.1",
     "react": "18.2.0",
@@ -81,6 +81,7 @@
     "storybook-addon-designs": "^6.3.1",
     "@vanilla-extract/vite-plugin": "^3.8.0",
     "@vitejs/plugin-react": "^3.1.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.7.4",
+    "loader-utils": "^2.0.4"
   }
 }
