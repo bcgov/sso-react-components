@@ -8,6 +8,12 @@ export default {
 
 const Template = (args) => <Button {...args}>{args.text}</Button>;
 
+export const GovStandard = Template.bind({});
+GovStandard.args = {
+  variant: 'govStandard',
+  text: 'Cancel',
+};
+
 export const Callout = Template.bind({});
 Callout.args = {
   variant: 'callout',
