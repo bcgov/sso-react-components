@@ -38,8 +38,9 @@ export const styles = {
   variant: {
     govStandard: {
       button: `
-        background-color: #003366;
+        color: #003366;
         background-color: #ffffff;
+        border: solid 2.5px #003366;
       `,
     },
     callout: {
