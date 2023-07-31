@@ -36,13 +36,6 @@ export const styles = {
     },
   },
   variant: {
-    govStandard: {
-      button: `
-        color: #003366;
-        background-color: #ffffff;
-        border: solid 2.5px #003366;
-      `,
-    },
     callout: {
       button: `
         background-color: #fdb913;
