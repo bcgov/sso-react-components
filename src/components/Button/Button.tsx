@@ -43,7 +43,7 @@ export const styles = {
     },
     primary: {
       button: `
-        background-color: #1a4dff;
+        background-color: #003366;
         color: #e8edff;
       `,
     },
@@ -61,8 +61,8 @@ export const styles = {
     },
     secondary: {
       button: `
-        box-shadow: 0px 0px 0px 3px #1a4dff inset;
-        color: #1a4dff;
+        box-shadow: 0px 0px 0px 3px #003366 inset;
+        color: #003366;
         background-color: #ffffff;
 
       `,
