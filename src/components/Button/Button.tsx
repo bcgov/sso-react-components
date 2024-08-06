@@ -38,7 +38,7 @@ export const styles = {
   variant: {
     callout: {
       button: `
-        background-color: #fdb913;
+        background-color: #fcba19;
       `,
     },
     primary: {
