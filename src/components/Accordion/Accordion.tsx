@@ -5,7 +5,7 @@ import flatten from 'lodash.flatten';
 import kebabCase from 'lodash.kebabcase';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp } from '@fortawesome/free-solid-svg-icons';
-import { LANDING_HEADER_FONT, SECONDARY_BLUE } from '../../styles/theme';
+import { LANDING_HEADER_FONT, LINK_BLUE } from '../../styles/theme';
 
 const ACCORDION_HEADER_COLOR = '#eaeaea';
 const ACCORDION_BODY_COLOR = '#f5f5f5';
@@ -76,7 +76,7 @@ interface Props {
 const ActionsContainer = styled.div`
   display: flex;
   flex-direction: row;
-  color: ${SECONDARY_BLUE};
+  color: ${LINK_BLUE};
   & span {
     cursor: pointer;
     text-decoration: underline;

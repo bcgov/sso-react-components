@@ -8,6 +8,7 @@ export const MAX_STRING_FIELD_WIDTH = '400px';
 export const SUBTITLE_FONT_SIZE = '18px';
 export const HELP_TEXT_FONT_SIZE = '12px';
 export const SECONDARY_BLUE = '#38598a';
+export const LINK_BLUE = '#1A5A96'
 export const LINK_COLOR = '#0000EE';
 export const PRIMARY_RED = '#D8292F';
 export const FORM_BUTTON_MIN_WIDTH = '190px';
