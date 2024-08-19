@@ -131,7 +131,21 @@ Default.args = {
   columns: defaultColumns,
   data: defaultData,
   enablePagination: false,
-  enableGlobalSearch: false,
+  enableGlobalSearch: true,
+  globalSearchStyle: { height: '25px' },
+  globalSearchPlaceholder: 'Search all columns...',
+};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  variant: 'Default',
+  readOnly: false,
+  columns: defaultColumns,
+  data: [],
+  enablePagination: false,
+  enableGlobalSearch: true,
+  globalSearchStyle: { height: '25px' },
+  globalSearchPlaceholder: 'Search all columns...',
 };
 
 Default.story = {

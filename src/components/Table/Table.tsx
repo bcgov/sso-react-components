@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   flexRender,
   getCoreRowModel,
   useReactTable,
-  ColumnDef,
   Row,
   PaginationState,
   getSortedRowModel,
@@ -12,11 +11,11 @@ import {
   getPaginationRowModel,
   ColumnFiltersState,
 } from '@tanstack/react-table';
-import Button from '../Button';
-import SearchBar from '../SearchBar';
 import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown, faSortUp, faSort } from '@fortawesome/free-solid-svg-icons';
+import SearchBar from 'components/SearchBar';
+import Button from 'components/Button';
 
 export const TABLE_BACKGROUND_COLOR = '#ededed';
 export const TABLE_ROW_ACTIVE_COLOR = '#4950FA';
@@ -30,12 +29,13 @@ const StyledTable = styled.table<{ variant?: string; readOnly?: boolean }>`
   width: 100%;
   -webkit-box-shadow: none;
   background-color: ${TABLE_BACKGROUND_COLOR};
-  padding: 0.1em 0.6em;
+  padding: 0 0.6em;
   box-shadow: none;
   text-align: left;
   border-collapse: separate;
   border-spacing: 0 ${TABLE_ROW_SPACING}px;
   color: black;
+  margin-bottom: 0.5em;
 
   & thead {
     font-size: 16px;
@@ -129,8 +129,10 @@ export interface TableProps {
   defaultPageSize?: number;
   enableGlobalSearch?: boolean;
   globalSearchPlaceholder?: string;
+  globalSearchStyle?: React.CSSProperties;
   enablePagination?: boolean;
   pageSizeOptions?: number[];
+  noDataFoundText?: string;
 }
 
 const Filters = () => {
@@ -146,8 +148,10 @@ const Table = ({
   defaultPageSize = 5,
   enableGlobalSearch = true,
   globalSearchPlaceholder = 'Search all columns...',
+  globalSearchStyle = {},
   enablePagination = true,
   pageSizeOptions = [5, 10, 20, 30, 40, 50],
+  noDataFoundText = 'No data found',
 }: TableProps) => {
   const [selectedRow, setSelectedRow] = useState<Row<unknown>>();
   const [pagination, setPagination] = React.useState<PaginationState>({
@@ -187,14 +191,14 @@ const Table = ({
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
         {enableGlobalSearch && (
-          <div style={{ width: '20%', marginTop: '1em' }}>
+          <div style={{ padding: '0.5em 0' }}>
             <SearchBar
               value={globalFilter ?? ''}
               onChange={(e: any) => setGlobalFilter(String(e.target.value))}
               placeholder={globalSearchPlaceholder}
-              style={{ height: '30px' }}
+              style={globalSearchStyle}
             />
           </div>
         )}
@@ -259,19 +263,27 @@ const Table = ({
           ))}
         </thead>
         <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr
-              key={row.id}
-              onClick={() => {
-                onRowClick(row);
-              }}
-              className={row.id === selectedRow?.id ? 'active' : ''}
-            >
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-              ))}
+          {table.getRowModel().rows.length === 0 ? (
+            <tr key="no-data">
+              <td style={{ textAlign: 'center' }} colSpan={columns.length}>
+                {noDataFoundText}
+              </td>
             </tr>
-          ))}
+          ) : (
+            table.getRowModel().rows.map((row) => (
+              <tr
+                key={row.id}
+                onClick={() => {
+                  onRowClick(row);
+                }}
+                className={row.id === selectedRow?.id ? 'active' : ''}
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                ))}
+              </tr>
+            ))
+          )}
         </tbody>
         <tfoot>
           {table.getFooterGroups().map((footerGroup) => (
@@ -286,7 +298,7 @@ const Table = ({
         </tfoot>
       </StyledTable>
       {enablePagination && (
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '0.5em 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', gap: '0.5em' }}>
             <Button onClick={() => table.previousPage()} disabled={!table.getCanPreviousPage()}>
               Prev
@@ -295,7 +307,7 @@ const Table = ({
               Next
             </Button>
           </div>
-          <div>
+          <div style={{ position: 'relative', zIndex: 999 }}>
             <Select
               defaultValue={{
                 label: `${table.getState().pagination.pageSize} per page`,
@@ -305,6 +317,7 @@ const Table = ({
               onChange={(e: any) => {
                 table.setPageSize(Number(e.value));
               }}
+              menuPosition="fixed"
             />
           </div>
         </div>
