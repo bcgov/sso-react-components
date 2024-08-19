@@ -207,22 +207,24 @@ const Table = ({
               (header) =>
                 header.column.getCanFilter() && (
                   <div key={header.id}>
-                    <label style={{ fontWeight: 'bold' }}>{String(header.column.columnDef?.meta?.filterLabel)}</label>
+                    <label style={{ fontWeight: 'bold' }}>
+                      {String((header.column.columnDef?.meta as any)?.filterLabel)}
+                    </label>
                     <Select
                       value={filterState[header.id]}
                       onChange={(selected) => {
                         setFilterState({
                           [header.id]: selected,
                         });
-                        const newFilter = header.column?.columnDef?.meta?.multiSelect
-                          ? Array.from(selected.values()).map((selection) => selection.value)
+                        const newFilter = (header.column.columnDef?.meta as any)?.multiSelect
+                          ? Array.from(selected.values()).map((selection: any) => selection.value)
                           : selected?.value ?? '';
 
                         header.column?.setFilterValue(newFilter.toString());
                       }}
-                      options={header.column?.columnDef?.meta?.filterOptions || []}
-                      isMulti={header.column?.columnDef?.meta?.multiSelect || false}
-                      placeholder={header.column.columnDef?.meta?.filterPlaceholder || 'Select...'}
+                      options={(header.column.columnDef?.meta as any)?.filterOptions || []}
+                      isMulti={(header.column.columnDef?.meta as any)?.multiSelect || false}
+                      placeholder={(header.column.columnDef?.meta as any)?.filterPlaceholder || 'Select...'}
                       isClearable={true}
                     />
                   </div>
