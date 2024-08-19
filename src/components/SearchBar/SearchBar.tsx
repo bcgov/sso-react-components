@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 
 const Icon = styled.i`
   position: absolute;
-  right: -0.5em;
+  right: 0.5em;
   top: 0.5em;
   color: grey;
 `;
