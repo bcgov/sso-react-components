@@ -132,6 +132,7 @@ export interface TableProps {
   globalSearchStyle?: React.CSSProperties;
   enablePagination?: boolean;
   pageSizeOptions?: number[];
+  noDataFoundText?: string;
 }
 
 const Filters = () => {
@@ -150,6 +151,7 @@ const Table = ({
   globalSearchStyle = {},
   enablePagination = true,
   pageSizeOptions = [5, 10, 20, 30, 40, 50],
+  noDataFoundText = 'No data found',
 }: TableProps) => {
   const [selectedRow, setSelectedRow] = useState<Row<unknown>>();
   const [pagination, setPagination] = React.useState<PaginationState>({
@@ -261,19 +263,27 @@ const Table = ({
           ))}
         </thead>
         <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr
-              key={row.id}
-              onClick={() => {
-                onRowClick(row);
-              }}
-              className={row.id === selectedRow?.id ? 'active' : ''}
-            >
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-              ))}
+          {table.getRowModel().rows.length === 0 ? (
+            <tr key="no-data">
+              <td style={{ textAlign: 'center' }} colSpan={columns.length}>
+                {noDataFoundText}
+              </td>
             </tr>
-          ))}
+          ) : (
+            table.getRowModel().rows.map((row) => (
+              <tr
+                key={row.id}
+                onClick={() => {
+                  onRowClick(row);
+                }}
+                className={row.id === selectedRow?.id ? 'active' : ''}
+              >
+                {row.getVisibleCells().map((cell) => (
+                  <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+                ))}
+              </tr>
+            ))
+          )}
         </tbody>
         <tfoot>
           {table.getFooterGroups().map((footerGroup) => (
