@@ -5,11 +5,7 @@ export default {
   component: SearchBar,
 };
 
-const Template = (args) => (
-  <div style={{ width: '250px' }}>
-    <SearchBar {...args} style={{ height: '25px' }} />
-  </div>
-);
+const Template = (args) => <SearchBar {...args} style={{ height: '25px' }} />;
 
 export const DefaultSearchBar = Template.bind({});
 DefaultSearchBar.args = {
