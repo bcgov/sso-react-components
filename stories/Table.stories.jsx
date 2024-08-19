@@ -1,55 +1,137 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencil, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Table from 'src/components/Table';
 
 export default {
   title: 'Table',
   component: Table,
+  argTypes: {
+    variant: {
+      control: {
+        type: 'select',
+        options: ['default', 'mini'],
+      },
+    },
+  },
 };
 
-const Template = (args) => (
-  <Table {...args}>
-    <thead>
-      <tr>
-        <th>Request ID</th>
-        <th>Project Name</th>
-        <th>Status</th>
-        <th>Service Type</th>
-        <th className="text-right">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>00001234</td>
-        <td>Education</td>
-        <td>Completed</td>
-        <td>Gold</td>
-        <td className="text-right">
-          <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
-          &nbsp; &nbsp;
-          <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
-        </td>
-      </tr>
-      <tr className="active">
-        <td>00005678</td>
-        <td>Health</td>
-        <td>Draft</td>
-        <td>Silver</td>
-        <td className="text-right">
-          <FontAwesomeIcon icon={faPencil}></FontAwesomeIcon>
-          &nbsp; &nbsp;
-          <FontAwesomeIcon icon={faTrashAlt}></FontAwesomeIcon>
-        </td>
-      </tr>
-    </tbody>
-  </Table>
-);
+const defaultData = [
+  {
+    requestId: '00000001',
+    projectName: 'Education',
+    status: 'Submitted',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000002',
+    projectName: 'Healthcare',
+    status: 'Completed',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000003',
+    projectName: 'Technology',
+    status: 'Completed',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000004',
+    projectName: 'Finance',
+    status: 'Draft',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000005',
+    projectName: 'Construction',
+    status: 'Completed',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000006',
+    projectName: 'Education',
+    status: 'Draft',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000007',
+    projectName: 'Construction',
+    status: 'Submitted',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000008',
+    projectName: 'Education',
+    status: 'Completed',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '00000009',
+    projectName: 'Technology',
+    status: 'Draft',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '000000010',
+    projectName: 'Healthcare',
+    status: 'Completed',
+    serviceType: 'Gold',
+  },
+  {
+    requestId: '000000011',
+    projectName: 'Finance',
+    status: 'Draft',
+    serviceType: 'Gold',
+  },
+];
+
+const defaultColumns = [
+  {
+    header: 'Request ID',
+    accessorKey: 'requestId',
+    enableColumnFilter: false,
+    enableSorting: false,
+  },
+  {
+    header: 'Project Name',
+    accessorKey: 'projectName',
+    enableColumnFilter: false,
+  },
+  {
+    header: 'Status',
+    accessorKey: 'status',
+    enableColumnFilter: true,
+    enableSorting: false,
+    filterFn: (row, columnId, value) => {
+      if (value.length === 0) return true;
+      return value.includes(row.getValue(columnId));
+    },
+    meta: {
+      filterOptions: [
+        { value: 'Submitted', label: 'Submitted' },
+        { value: 'Completed', label: 'Completed' },
+        { value: 'Draft', label: 'Draft' },
+      ],
+      filterLabel: 'Status',
+      filterPlaceholder: 'Select Status',
+      multiSelect: true,
+    },
+  },
+  {
+    header: 'Service Type',
+    accessorKey: 'serviceType',
+    enableColumnFilter: false,
+  },
+];
+
+const Template = (args) => <Table {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   variant: 'Default',
-  content: 'Default Table',
+  readOnly: false,
+  columns: defaultColumns,
+  data: defaultData,
+  enablePagination: false,
+  enableGlobalSearch: false,
 };
 
 Default.story = {
