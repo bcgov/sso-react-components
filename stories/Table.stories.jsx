@@ -131,7 +131,9 @@ Default.args = {
   columns: defaultColumns,
   data: defaultData,
   enablePagination: false,
-  enableGlobalSearch: false,
+  enableGlobalSearch: true,
+  globalSearchStyle: { height: '25px' },
+  globalSearchPlaceholder: 'Search all columns...',
 };
 
 Default.story = {
