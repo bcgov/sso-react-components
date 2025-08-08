@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Tabs, { TabPane } from 'rc-tabs';
+import Tabs from 'rc-tabs';
+import TabPane from 'rc-tabs/lib/TabPanelList/TabPane';
 
 const StyledTabs = styled(Tabs)`
   .rc-tabs-tab {
