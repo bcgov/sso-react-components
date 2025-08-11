@@ -191,9 +191,18 @@ const Table = ({
 
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-end',
+          gap: '0.5em',
+          padding: '0.5em 0',
+          flexWrap: 'wrap',
+        }}
+      >
         {enableGlobalSearch && (
-          <div style={{ padding: '0.5em 0' }}>
+          <div style={{ width: '250px' }}>
             <SearchBar
               value={globalFilter ?? ''}
               onChange={(e: any) => setGlobalFilter(String(e.target.value))}
@@ -203,39 +212,35 @@ const Table = ({
           </div>
         )}
 
-        <div
-          style={{ display: 'flex', justifyContent: 'flex-end', flexWrap: 'wrap', padding: '0.5em 0', gap: '0.5em' }}
-        >
-          {table.getHeaderGroups().map((headerGroup) =>
-            headerGroup.headers.map(
-              (header) =>
-                header.column.getCanFilter() && (
-                  <div key={header.id}>
-                    <label style={{ fontWeight: 'bold' }}>
-                      {String((header.column.columnDef?.meta as any)?.filterLabel)}
-                    </label>
-                    <Select
-                      value={filterState[header.id]}
-                      onChange={(selected) => {
-                        setFilterState({
-                          [header.id]: selected,
-                        });
-                        const newFilter = (header.column.columnDef?.meta as any)?.multiSelect
-                          ? Array.from(selected.values()).map((selection: any) => selection.value)
-                          : selected?.value ?? '';
+        {table.getHeaderGroups().map((headerGroup) =>
+          headerGroup.headers.map(
+            (header) =>
+              header.column.getCanFilter() && (
+                <div key={header.id} style={{ width: '250px' }}>
+                  <label style={{ fontWeight: 'bold' }}>
+                    {String((header.column.columnDef?.meta as any)?.filterLabel + ':')}
+                  </label>
+                  <Select
+                    value={filterState[header.id]}
+                    onChange={(selected) => {
+                      setFilterState({
+                        [header.id]: selected,
+                      });
+                      const newFilter = (header.column.columnDef?.meta as any)?.multiSelect
+                        ? Array.from(selected.values()).map((selection: any) => selection.value)
+                        : selected?.value ?? '';
 
-                        header.column?.setFilterValue(newFilter.toString());
-                      }}
-                      options={(header.column.columnDef?.meta as any)?.filterOptions || []}
-                      isMulti={(header.column.columnDef?.meta as any)?.multiSelect || false}
-                      placeholder={(header.column.columnDef?.meta as any)?.filterPlaceholder || 'Select...'}
-                      isClearable={true}
-                    />
-                  </div>
-                ),
-            ),
-          )}
-        </div>
+                      header.column?.setFilterValue(newFilter.toString());
+                    }}
+                    options={(header.column.columnDef?.meta as any)?.filterOptions || []}
+                    isMulti={(header.column.columnDef?.meta as any)?.multiSelect || false}
+                    placeholder={(header.column.columnDef?.meta as any)?.filterPlaceholder || 'Select...'}
+                    isClearable={true}
+                  />
+                </div>
+              ),
+          ),
+        )}
       </div>
 
       <StyledTable variant={variant} readOnly={readOnly}>
@@ -307,7 +312,7 @@ const Table = ({
               Next
             </Button>
           </div>
-          <div style={{ position: 'relative', zIndex: 999 }}>
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <Select
               defaultValue={{
                 label: `${table.getState().pagination.pageSize} per page`,

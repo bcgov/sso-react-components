@@ -130,7 +130,7 @@ Default.args = {
   readOnly: false,
   columns: defaultColumns,
   data: defaultData,
-  enablePagination: false,
+  enablePagination: true,
   enableGlobalSearch: true,
   globalSearchStyle: { height: '25px' },
   globalSearchPlaceholder: 'Search all columns...',
