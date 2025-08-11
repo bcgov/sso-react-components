@@ -1,18 +1,29 @@
 import React from 'react';
-import Tabs, { Tab } from 'src/components/Tabs';
+import Tabs from '../src/components/Tabs';
 
 export default {
   title: 'Tabs',
   component: Tabs,
 };
 
+const items = [
+  {
+    key: '1',
+    label: 'Tab 1',
+  },
+  {
+    key: '2',
+    label: 'Tab 2',
+  },
+  {
+    key: '3',
+    label: 'Tab 3',
+  },
+];
+
 const Template = (args) => (
   <>
-    <Tabs {...args} onChange tabBarGutter={20} style={{ width: '180px' }}>
-      <Tab tab="Tab 1" key="1" />
-      <Tab tab="Tab 2" key="2" />
-      <Tab tab="Tab 3" key="3" />
-    </Tabs>
+    <Tabs {...args} onChange tabBarGutter={20} style={{ width: '200px' }} items={items} />
   </>
 );
 

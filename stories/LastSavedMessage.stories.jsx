@@ -1,5 +1,5 @@
 import React from 'react';
-import LastSavedMessage from 'src/components/LastSavedMessage';
+import LastSavedMessage from '../src/components/LastSavedMessage';
 
 export default {
   title: 'LastSavedMessage',

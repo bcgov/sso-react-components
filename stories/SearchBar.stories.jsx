@@ -1,4 +1,5 @@
-import SearchBar from 'src/components/SearchBar';
+import React from 'react';
+import SearchBar from '../src/components/SearchBar';
 
 export default {
   title: 'SearchBar',
