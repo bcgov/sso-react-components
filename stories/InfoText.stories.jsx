@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoText from 'src/components/InfoText';
+import InfoText from '../src/components/InfoText';
 
 export default {
   title: 'InfoText',

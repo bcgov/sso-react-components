@@ -14,8 +14,8 @@ import {
 import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSortDown, faSortUp, faSort } from '@fortawesome/free-solid-svg-icons';
-import SearchBar from 'components/SearchBar';
-import Button from 'components/Button';
+import SearchBar from '../../components/SearchBar';
+import Button from '../../components/Button';
 
 export const TABLE_BACKGROUND_COLOR = '#ededed';
 export const TABLE_ROW_ACTIVE_COLOR = '#4950FA';

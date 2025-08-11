@@ -1,5 +1,5 @@
 import React from 'react';
-import NumberedContents from 'src/components/NumberedContents';
+import NumberedContents from '../src/components/NumberedContents';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {

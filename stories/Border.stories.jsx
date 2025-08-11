@@ -1,5 +1,5 @@
 import React from 'react';
-import Border from 'src/components/Border';
+import Border from '../src/components/Border';
 
 export default {
   title: 'Border',
