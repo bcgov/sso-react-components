@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import styled from 'styled-components';
 import {
   flexRender,
@@ -10,6 +10,8 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   ColumnFiltersState,
+  ColumnDef,
+  VisibilityState,
 } from '@tanstack/react-table';
 import Select from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -113,18 +115,31 @@ export interface TableFilter {
   onChange?: Function;
   options: Option[];
   label?: string;
+  defaultValue?: Option | Option[];
 }
 
 export interface Column {
   header: string;
   accessorKey: string;
+  enableSorting?: boolean;
+  enableFiltering?: boolean;
+  meta?: {
+    filterLabel?: string;
+    filterOptions?: Option[];
+    multiSelect?: boolean;
+    filterPlaceholder?: string;
+    defaultValue?: Option | Option[];
+  };
+  cell?: (props: { value: any; row: Row<unknown> }) => React.ReactNode;
+  footer?: React.ReactNode;
 }
 
-export interface TableProps {
+export interface TableProps<T extends object> {
   variant?: string;
   readOnly?: boolean;
-  columns: Column[];
-  data: unknown[];
+  columns: ColumnDef<T, any>[];
+  hiddenColumns?: string[];
+  data: T[];
   onRowSelect?: Function;
   defaultPageSize?: number;
   enableGlobalSearch?: boolean;
@@ -135,16 +150,13 @@ export interface TableProps {
   noDataFoundText?: string;
 }
 
-const Filters = () => {
-  return <></>;
-};
-
-const Table = ({
+const Table = <T extends object>({
   variant = 'default',
   columns = [],
+  hiddenColumns = [],
   data = [],
   readOnly = false,
-  onRowSelect = (rowData: unknown) => {},
+  onRowSelect = (rowData: T) => {},
   defaultPageSize = 5,
   enableGlobalSearch = true,
   globalSearchPlaceholder = 'Search all columns...',
@@ -152,8 +164,8 @@ const Table = ({
   enablePagination = true,
   pageSizeOptions = [5, 10, 20, 30, 40, 50],
   noDataFoundText = 'No data found',
-}: TableProps) => {
-  const [selectedRow, setSelectedRow] = useState<Row<unknown>>();
+}: TableProps<T>) => {
+  const [selectedRow, setSelectedRow] = useState<Row<T>>();
   const [pagination, setPagination] = React.useState<PaginationState>({
     pageIndex: 0,
     pageSize: defaultPageSize,
@@ -161,6 +173,21 @@ const Table = ({
   const [globalFilter, setGlobalFilter] = React.useState('');
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
   const [filterState, setFilterState] = useState<any>({});
+
+  const initialVisibility: VisibilityState = useMemo(() => {
+    const visibility: VisibilityState = {};
+
+    columns.forEach((col: any) => {
+      const key = col.accessorKey;
+      if (key) {
+        visibility[key] = !hiddenColumns.includes(key);
+      }
+    });
+
+    return visibility;
+  }, [columns, hiddenColumns]);
+
+  const [columnVisibility, setColumnVisibility] = React.useState(initialVisibility);
 
   const table = useReactTable({
     data,
@@ -179,12 +206,14 @@ const Table = ({
       pagination,
       globalFilter,
       columnFilters,
+      columnVisibility,
     },
+    onColumnVisibilityChange: setColumnVisibility,
   });
 
   const onRowClick = (row: Row<unknown>) => {
     if (!readOnly) {
-      setSelectedRow(row);
+      setSelectedRow(row as Row<T>);
       onRowSelect(row.original);
     }
   };
@@ -236,6 +265,7 @@ const Table = ({
                     isMulti={(header.column.columnDef?.meta as any)?.multiSelect || false}
                     placeholder={(header.column.columnDef?.meta as any)?.filterPlaceholder || 'Select...'}
                     isClearable={true}
+                    defaultValue={(header.column.columnDef?.meta as any)?.defaultValue || null}
                   />
                 </div>
               ),
