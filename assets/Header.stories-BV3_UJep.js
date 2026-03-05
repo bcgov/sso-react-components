@@ -1,4 +1,4 @@
-import{R as o}from"./iframe-Ol00qHgk.js";import{d as c}from"./styled-components.browser.esm-BHjMWl6I.js";import"./preload-helper-D9Z9MdNV.js";import"./index-DLfQ-PO-.js";const n={sm:"1.0rem",md:"1.2rem",lg:"1.4rem"},p={primary:"#0139ff",dark:"#000"},g=c.div`
+import{R as o}from"./iframe-bnVuuLdz.js";import{d as c}from"./styled-components.browser.esm-C_JvffjW.js";import"./preload-helper-D9Z9MdNV.js";import"./index-DDQq91b6.js";const n={sm:"1.0rem",md:"1.2rem",lg:"1.4rem"},p={primary:"#0139ff",dark:"#000"},g=c.div`
   font-weight: bold;
   ${e=>`
     color: ${p[e.variant||"dark"]};

@@ -1,4 +1,4 @@
-import{R as d}from"./iframe-Ol00qHgk.js";import{d as i}from"./styled-components.browser.esm-BHjMWl6I.js";import"./preload-helper-D9Z9MdNV.js";import"./index-DLfQ-PO-.js";const n={primary:"#0139ff",dark:"#000"},c={none:"",sm:"5px",md:"10px",lg:"20px"},m={sm:"1px",md:"2px",lg:"3px"},p=i.div`
+import{R as d}from"./iframe-bnVuuLdz.js";import{d as i}from"./styled-components.browser.esm-C_JvffjW.js";import"./preload-helper-D9Z9MdNV.js";import"./index-DDQq91b6.js";const n={primary:"#0139ff",dark:"#000"},c={none:"",sm:"5px",md:"10px",lg:"20px"},m={sm:"1px",md:"2px",lg:"3px"},p=i.div`
   border-style: solid;
   width: 100%;
   height: auto;
