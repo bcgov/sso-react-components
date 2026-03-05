@@ -118,7 +118,22 @@ const defaultColumns = [
   {
     header: 'Service Type',
     accessorKey: 'serviceType',
+    meta: {
+      filterLabel: 'Service Type',
+      filterPlaceholder: 'Select Service Type',
+      filterOptions: [
+        { value: 'Gold', label: 'Gold' },
+        { value: 'Silver', label: 'Silver' },
+      ],
+      defaultValue: { value: 'Gold', label: 'Gold' },
+    },
+    enableSorting: false,
+  },
+  {
+    header: 'Actions',
+    accessorKey: 'actions',
     enableColumnFilter: false,
+    enableSorting: false,
   },
 ];
 
@@ -134,6 +149,7 @@ Default.args = {
   enableGlobalSearch: true,
   globalSearchStyle: { height: '25px' },
   globalSearchPlaceholder: 'Search all columns...',
+  hiddenColumns: ['actions'],
 };
 
 export const Empty = Template.bind({});
