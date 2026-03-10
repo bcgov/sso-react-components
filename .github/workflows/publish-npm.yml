@@ -22,4 +22,5 @@ jobs:
         run: |
           yarn
           yarn rollup
+          npm whoami
           npm publish --access public
