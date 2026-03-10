@@ -31,6 +31,8 @@ jobs:
         run: |
           echo "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" | cut -d. -f2 | base64 --decode | jq
 
+      - run: npm install -g npm@latest
+
       - name: Publish Package
         run: |
           yarn
