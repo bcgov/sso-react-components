@@ -27,6 +27,10 @@ jobs:
             echo "token present"
           fi
 
+      - name: Decode OIDC token
+        run: |
+          echo "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" | cut -d. -f2 | base64 --decode | jq
+
       - name: Publish Package
         run: |
           yarn
