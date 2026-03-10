@@ -15,6 +15,8 @@ storybook, merge in a feature branch to the `main` branch.
 1. Merge your feature branch into `main`. This will automatically bump the package version based on the commits and generate a tag for the release.
 2. Create a new [release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository) using the generated tag.
 
+This repository is granted access to publish via the [npm settings](https://docs.npmjs.com/trusted-publishers). To update see the package settings in NPM.
+
 ## Adding Components
 
 To add a component:
