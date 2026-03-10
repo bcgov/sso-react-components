@@ -2,6 +2,11 @@ name: Publish NPM Package
 on:
   release:
     types: [created]
+  dispatch:
+
+permissions:
+  id-token: write  # Required for OIDC
+  contents: read
 
 jobs:
   release:
@@ -14,8 +19,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: Publish Package
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn
           yarn rollup
