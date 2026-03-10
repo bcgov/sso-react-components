@@ -18,19 +18,6 @@ jobs:
           node-version: 22
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Check if OIDC token exists
-        run: |
-          if [ -z "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" ]; then
-            echo "no token"
-            exit 1
-          else
-            echo "token present"
-          fi
-
-      - name: Decode OIDC token
-        run: |
-          echo "$ACTIONS_ID_TOKEN_REQUEST_TOKEN" | cut -d. -f2 | base64 --decode | jq
-
       - run: npm install -g npm@latest
 
       - name: Publish Package
