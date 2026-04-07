@@ -22,6 +22,10 @@ const StyledTabs = styled(Tabs)`
     font-weight: 600;
   }
 
+  .rc-tabs-tabpane-hidden {
+    display: none;
+  }  
+
   .rc-tabs-nav-operations {
     display: none;
   }

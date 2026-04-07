@@ -33,7 +33,7 @@ function LastSavedMessage({ saving, content = '', variant = 'info' }: Props) {
       <SaveContainer>
         <Icon>
           {saving ? (
-            <SpinnerRotatingLines width="20" visible />
+            <SpinnerRotatingLines width="20" height="20" visible />
           ) : (
             <FontAwesomeIcon style={{ color: '#006fc4' }} icon={icon} />
           )}
