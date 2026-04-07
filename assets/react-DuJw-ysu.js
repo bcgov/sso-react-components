@@ -1,0 +1,1 @@
+import{n as e,t}from"./react-C2LPC3C-.js";t();export{e as MDXProvider};

@@ -1,0 +1,1 @@
+import{n as e,r as t}from"./chunk-zsgVPwQN.js";var n=t({default:()=>r});function r(e,t){if(e==null)return{};var n={};for(var r in e)if({}.hasOwnProperty.call(e,r)){if(t.indexOf(r)!==-1)continue;n[r]=e[r]}return n}var i=e((()=>{}));export{i as n,n as r,r as t};

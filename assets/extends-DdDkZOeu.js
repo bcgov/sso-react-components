@@ -1,0 +1,1 @@
+import{n as e,r as t}from"./chunk-zsgVPwQN.js";var n=t({default:()=>r});function r(){return r=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)({}).hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},r.apply(null,arguments)}var i=e((()=>{}));export{n,i as r,r as t};

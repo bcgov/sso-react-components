@@ -1,0 +1,3 @@
+import{n as e}from"./chunk-zsgVPwQN.js";import{t}from"./react-DhyLsFPD.js";import{t as n}from"./jsx-runtime-CEl72Qnd.js";import{n as r,t as i}from"./SearchBar-Dsv_PqiM.js";var a,o,s,c,l;e((()=>{t(),i(),a=n(),o={title:`SearchBar`,component:r},s=e=>(0,a.jsx)(r,{...e,style:{height:`25px`}}),c=s.bind({}),c.args={placeholder:`Enter search criteria`,maxLength:10},c.story={parameters:{design:{type:`figma`,url:`https://www.figma.com/file/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=5578%3A891`}}},c.parameters={...c.parameters,docs:{...c.parameters?.docs,source:{originalSource:`args => <SearchBar {...args} style={{
+  height: '25px'
+}} />`,...c.parameters?.docs?.source}}},l=[`DefaultSearchBar`]}))();export{c as DefaultSearchBar,l as __namedExportsOrder,o as default};

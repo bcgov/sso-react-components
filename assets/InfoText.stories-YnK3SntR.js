@@ -1,0 +1,6 @@
+import{n as e,o as t}from"./chunk-zsgVPwQN.js";import{t as n}from"./react-DhyLsFPD.js";import{t as r}from"./jsx-runtime-CEl72Qnd.js";import{n as i,r as a}from"./styled-components.browser.esm-Kd2JZy3g.js";var o,s,c,l=e((()=>{o=t(n()),i(),s=a.div`
+  font-size: 0.9rem;
+  ${e=>`
+    font-style: ${e.italic?`italic`:`normal`};
+  `}
+`,c=({italic:e,children:t})=>o.createElement(s,{italic:e},t),c.__docgenInfo={description:``,methods:[],displayName:`InfoText`,props:{italic:{required:!1,tsType:{name:`boolean`},description:``},children:{required:!0,tsType:{name:`ReactReactNode`,raw:`React.ReactNode`},description:``}}}})),u=e((()=>{l()})),d,f,p,m,h;e((()=>{n(),u(),d=r(),f={title:`InfoText`,component:c},p=e=>(0,d.jsx)(c,{...e,children:e.text}),m=p.bind({}),m.args={italic:!0,text:`* If you did not find the user you were looking for, you can try searching for the user in our IDIR Lookup tool.`},m.story={parameters:{design:{type:`figma`,url:`https://www.figma.com/file/Ed8vX3f4SQq6GDEVWKlXNf/SSO-Wireframes?node-id=5578%3A927`}}},m.parameters={...m.parameters,docs:{...m.parameters?.docs,source:{originalSource:`args => <InfoText {...args}>{args.text}</InfoText>`,...m.parameters?.docs?.source}}},h=[`ItalicFontInfoText`]}))();export{m as ItalicFontInfoText,h as __namedExportsOrder,f as default};
